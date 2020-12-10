@@ -1,11 +1,10 @@
 package pl.bartekficek.springdataexample;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+//Changing table name in db with annotation @Table
+@Table(name = "MyCars")
 public class Car {
 
     @Id
@@ -13,6 +12,8 @@ public class Car {
     private Long id;
 
     private String carMake;
+
+    @Transient
     private String model;
     private Color color;
 
