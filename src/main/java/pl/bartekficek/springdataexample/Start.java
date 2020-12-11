@@ -17,7 +17,13 @@ public class Start {
 
     @EventListener(ApplicationReadyEvent.class)
     public void runExample() {
-        Car car = new Car("Volvo", "S6", Color.BLUE);
-        carRepo.save(car);
+        Car car1 = new Car("Fiat", "125", Color.BLACK);
+        carRepo.save(car1);
+
+        Car car2 = new Car("Citroen", "Xsara", Color.RED);
+        carRepo.save(car2);
+
+        Car car3 = new Car("Peugeot", "206", Color.YELLOW);
+        carRepo.save(car3);
     }
 }

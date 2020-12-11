@@ -15,6 +15,8 @@ public class Car {
 
     @Transient
     private String model;
+
+    @Enumerated(EnumType.STRING)
     private Color color;
 
     public Car(String carMake, String model, Color color) {
