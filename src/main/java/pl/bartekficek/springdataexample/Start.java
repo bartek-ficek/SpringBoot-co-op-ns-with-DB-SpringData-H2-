@@ -5,6 +5,8 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class Start {
 
@@ -18,10 +20,14 @@ public class Start {
     @EventListener(ApplicationReadyEvent.class)
     public void runExample() {
 
-        carRepo.deleteById(3L);
+//        carRepo.deleteById(3L);
 
         Iterable<Car> allCars = carRepo.findAll();
         allCars.forEach(System.out::println);
+
+        List<Car> yellowCars = carRepo.findAllByColor(Color.YELLOW);
+        yellowCars.forEach(System.out::println);
+
 
 //        Car car1 = new Car("Fiat", "125", Color.BLACK);
 //        carRepo.save(car1);
